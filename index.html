@@ -1,0 +1,198 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project-Euler Solutions</title>
+  <meta name="description" content="My progress on Project-Euler">
+  <meta name="author" content="Aapo Leppänen">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/style.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+  <script src="./js/script.js"></script>
+
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+
+</head>
+
+<body>
+  <div class="main">
+    <div class="middle">
+      <div class="content">
+        <div class="prTableDiv">
+          <table class="prTable">
+            <tr>
+              <th width="20%">Problem</th>
+              <th width="60%">Code</th>
+              <th width="10%">Solution</th>
+              <th width="10%">Date</th>
+            </tr>
+
+            <tr>
+              <td>Problem 1: Find the sum of all the multiples of 3 or 5 below 1000.</td>
+              <td>
+								<pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>function</span> problem1<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+  <span style='color:#800000; font-weight:bold; '>var</span> numArr <span style='color:#808030; '>=</span> <span style='color:#808030; '>[</span><span style='color:#808030; '>]</span><span style='color:#800080; '>;</span>
+  <span style='color:#800000; font-weight:bold; '>for</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>var</span> x<span style='color:#808030; '>=</span><span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span> x<span style='color:#808030; '>&lt;</span><span style='color:#008c00; '>1000</span><span style='color:#800080; '>;</span> x<span style='color:#808030; '>++</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span>x<span style='color:#808030; '>%</span><span style='color:#008c00; '>3</span><span style='color:#808030; '>==</span><span style='color:#008c00; '>0</span> <span style='color:#808030; '>||</span> x<span style='color:#808030; '>%</span><span style='color:#008c00; '>5</span><span style='color:#808030; '>==</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+      numArr<span style='color:#808030; '>.</span>push<span style='color:#808030; '>(</span>x<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    <span style='color:#800080; '>}</span>
+  <span style='color:#800080; '>}</span>
+  <span style='color:#800000; font-weight:bold; '>return</span> numArr<span style='color:#808030; '>.</span>reduce<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>a<span style='color:#808030; '>,</span>b<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>return</span> a <span style='color:#808030; '>+</span> b<span style='color:#800080; '>;</span>
+  <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+</pre>
+              </td>
+              <td class="solution1">working...</td>
+              <!-- 233168 -->
+              <td>9/4/2018</td>
+            </tr>
+
+            <tr>
+							<td>Problem 2: By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.</td>
+							<td>
+								<pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>function</span> problem2<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+  <span style='color:#800000; font-weight:bold; '>var</span> numArr <span style='color:#808030; '>=</span> <span style='color:#808030; '>[</span><span style='color:#008c00; '>1</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>2</span><span style='color:#808030; '>]</span><span style='color:#800080; '>;</span>
+  <span style='color:#800000; font-weight:bold; '>while</span><span style='color:#808030; '>(</span>numArr<span style='color:#808030; '>[</span>numArr<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>length</span><span style='color:#808030; '>-</span><span style='color:#008c00; '>1</span><span style='color:#808030; '>]</span><span style='color:#808030; '>&lt;</span><span style='color:#008c00; '>4000000</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+    numArr<span style='color:#808030; '>.</span>push<span style='color:#808030; '>(</span> numArr<span style='color:#808030; '>[</span>numArr<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>length</span> <span style='color:#808030; '>-</span> <span style='color:#008c00; '>2</span><span style='color:#808030; '>]</span> <span style='color:#808030; '>+</span> numArr<span style='color:#808030; '>[</span>numArr<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>length</span> <span style='color:#808030; '>-</span> <span style='color:#008c00; '>1</span><span style='color:#808030; '>]</span> <span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+  <span style='color:#800080; '>}</span>
+  numArr <span style='color:#808030; '>=</span> numArr<span style='color:#808030; '>.</span>filter<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>a<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span> <span style='color:#800000; font-weight:bold; '>return</span> a<span style='color:#808030; '>%</span><span style='color:#008c00; '>2</span><span style='color:#808030; '>===</span><span style='color:#008c00; '>0</span><span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+  <span style='color:#800000; font-weight:bold; '>return</span> numArr<span style='color:#808030; '>.</span>reduce<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>a<span style='color:#808030; '>,</span>b<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span> <span style='color:#800000; font-weight:bold; '>return</span> a<span style='color:#808030; '>+</span>b<span style='color:#800080; '>;</span> <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+</pre>
+							</td>
+							<td class="solution2">working...</td>
+							<!-- 4613732 -->
+							<td>9/4/2018</td>
+            </tr>
+
+						<tr>
+							<td>Problem 3: What is the largest prime factor of the number 600851475143 ?</td>
+							<td><pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>function</span> problem3<span style='color:#808030; '>(</span>num<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+  <span style='color:#800000; font-weight:bold; '>for</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>var</span> x <span style='color:#808030; '>=</span> <span style='color:#008c00; '>2</span><span style='color:#800080; '>;</span> x<span style='color:#808030; '>&lt;=</span>num<span style='color:#800080; '>;</span> x<span style='color:#808030; '>++</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>isPrime<span style='color:#808030; '>(</span>x<span style='color:#808030; '>)</span> <span style='color:#808030; '>!==</span> <span style='color:#0f4d75; '>true</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+    <span style='color:#800080; '>}</span>
+    <span style='color:#800000; font-weight:bold; '>else</span> <span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span>num<span style='color:#808030; '>%</span>x<span style='color:#808030; '>===</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+      num <span style='color:#808030; '>=</span> num<span style='color:#808030; '>/</span>x<span style='color:#800080; '>;</span>
+    <span style='color:#800080; '>}</span>
+    <span style='color:#800000; font-weight:bold; '>else</span> <span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span>isPrime<span style='color:#808030; '>(</span>num<span style='color:#808030; '>)</span> <span style='color:#808030; '>==</span> <span style='color:#0f4d75; '>true</span><span style='color:#808030; '>)</span>
+      <span style='color:#800000; font-weight:bold; '>return</span> num<span style='color:#800080; '>;</span>
+  <span style='color:#800080; '>}</span>
+<span style='color:#800080; '>}</span>
+
+<span style='color:#800000; font-weight:bold; '>function</span> isPrime<span style='color:#808030; '>(</span>num<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+  <span style='color:#800000; font-weight:bold; '>for</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>var</span> i <span style='color:#808030; '>=</span> <span style='color:#008c00; '>2</span><span style='color:#800080; '>;</span> i <span style='color:#808030; '>&lt;</span> num<span style='color:#800080; '>;</span> i<span style='color:#808030; '>++</span><span style='color:#808030; '>)</span>
+    <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>num <span style='color:#808030; '>%</span> i <span style='color:#808030; '>===</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span> <span style='color:#800000; font-weight:bold; '>return</span> <span style='color:#0f4d75; '>false</span><span style='color:#800080; '>;</span>
+  <span style='color:#800000; font-weight:bold; '>return</span> num <span style='color:#808030; '>!==</span> <span style='color:#008c00; '>1</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+</pre>
+							</td>
+							<td class="solution3">working...</td>
+							<!-- 6857 -->
+							<td>10/4/2018</td>
+						</tr>
+
+            <tr>
+							<td>Problem 4: Find the largest palindrome made from the product of two 3-digit numbers.</td>
+							<td><pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>function</span> problem4<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>var</span> palindromes <span style='color:#808030; '>=</span> <span style='color:#808030; '>[</span><span style='color:#808030; '>]</span><span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>for</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>var</span> x<span style='color:#808030; '>=</span><span style='color:#008c00; '>10000</span><span style='color:#800080; '>;</span> x<span style='color:#808030; '>&lt;=</span><span style='color:#008c00; '>998001</span><span style='color:#800080; '>;</span> x<span style='color:#808030; '>++</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+      <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>x<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>toString</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>===</span> x<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>toString</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>split</span><span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>reverse<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>join</span><span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+        palindromes<span style='color:#808030; '>.</span>push<span style='color:#808030; '>(</span>x<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+      <span style='color:#800080; '>}</span>
+    <span style='color:#800080; '>}</span>
+    <span style='color:#800000; font-weight:bold; '>for</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>var</span> z<span style='color:#808030; '>=</span>palindromes<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>length</span><span style='color:#808030; '>-</span><span style='color:#008c00; '>1</span><span style='color:#800080; '>;</span> z<span style='color:#808030; '>></span><span style='color:#808030; '>-</span><span style='color:#008c00; '>1</span><span style='color:#800080; '>;</span> z<span style='color:#808030; '>--</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+      <span style='color:#800000; font-weight:bold; '>for</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>var</span> y<span style='color:#808030; '>=</span><span style='color:#008c00; '>999</span><span style='color:#800080; '>;</span> y<span style='color:#808030; '>>=</span><span style='color:#008c00; '>100</span><span style='color:#800080; '>;</span>y<span style='color:#808030; '>--</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+        <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>palindromes<span style='color:#808030; '>[</span>z<span style='color:#808030; '>]</span><span style='color:#808030; '>%</span>y<span style='color:#808030; '>===</span><span style='color:#008c00; '>0</span> <span style='color:#808030; '>&amp;&amp;</span> <span style='color:#808030; '>(</span>palindromes<span style='color:#808030; '>[</span>z<span style='color:#808030; '>]</span><span style='color:#808030; '>/</span>y<span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>toString</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>length</span> <span style='color:#808030; '>===</span> <span style='color:#008c00; '>3</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+          <span style='color:#800000; font-weight:bold; '>return</span> palindromes<span style='color:#808030; '>[</span>z<span style='color:#808030; '>]</span><span style='color:#800080; '>;</span>
+        <span style='color:#800080; '>}</span>
+      <span style='color:#800080; '>}</span>
+    <span style='color:#800080; '>}</span>
+<span style='color:#800080; '>}</span>
+</pre>
+							</td>
+							<td class="solution4">working...</td>
+							<!-- 906609 -->
+							<td>11/4/2018</td>
+						</tr>
+
+            <tr>
+							<td>Problem 5: What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?</td>
+							<td><pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>function</span> problem5<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+  <span style='color:#800000; font-weight:bold; '>var</span> sN <span style='color:#808030; '>=</span> <span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span>
+  c<span style='color:#808030; '>=</span><span style='color:#0f4d75; '>false</span><span style='color:#800080; '>;</span>
+  <span style='color:#800000; font-weight:bold; '>while</span><span style='color:#808030; '>(</span>c<span style='color:#808030; '>===</span><span style='color:#0f4d75; '>false</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+    sN<span style='color:#808030; '>+=</span><span style='color:#008c00; '>380</span><span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>for</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>var</span> x<span style='color:#808030; '>=</span><span style='color:#008c00; '>3</span><span style='color:#800080; '>;</span> x<span style='color:#808030; '>&lt;=</span><span style='color:#008c00; '>18</span><span style='color:#800080; '>;</span>x<span style='color:#808030; '>++</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+      <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>sN<span style='color:#808030; '>%</span>x<span style='color:#808030; '>!==</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+        <span style='color:#800000; font-weight:bold; '>break</span><span style='color:#800080; '>;</span>
+      <span style='color:#800080; '>}</span>
+      <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>sN<span style='color:#808030; '>%</span>x<span style='color:#808030; '>==</span><span style='color:#008c00; '>0</span> <span style='color:#808030; '>&amp;&amp;</span> x<span style='color:#808030; '>===</span><span style='color:#008c00; '>18</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+        c<span style='color:#808030; '>=</span><span style='color:#0f4d75; '>true</span><span style='color:#800080; '>;</span>
+        <span style='color:#800000; font-weight:bold; '>return</span> sN<span style='color:#800080; '>;</span>
+      <span style='color:#800080; '>}</span>
+    <span style='color:#800080; '>}</span>
+  <span style='color:#800080; '>}</span>
+<span style='color:#800080; '>}</span>
+</pre>
+							</td>
+							<td class="solution5">working...</td>
+							<!-- 906609 -->
+							<td>18/4/2018</td>
+						</tr>
+
+            <tr>
+							<td>Problem 6: Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.</td>
+							<td><pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>function</span> problem6<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+  <span style='color:#800000; font-weight:bold; '>var</span> numArr<span style='color:#808030; '>=</span><span style='color:#808030; '>[</span><span style='color:#808030; '>]</span><span style='color:#800080; '>;</span>
+  <span style='color:#800000; font-weight:bold; '>var</span> sqSum<span style='color:#800080; '>;</span>
+  <span style='color:#800000; font-weight:bold; '>var</span> sumSq<span style='color:#800080; '>;</span>
+  <span style='color:#800000; font-weight:bold; '>for</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>var</span> x<span style='color:#808030; '>=</span><span style='color:#008c00; '>1</span><span style='color:#800080; '>;</span> x<span style='color:#808030; '>&lt;=</span><span style='color:#008c00; '>100</span><span style='color:#800080; '>;</span> x<span style='color:#808030; '>++</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+    numArr<span style='color:#808030; '>.</span>push<span style='color:#808030; '>(</span>x<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+  <span style='color:#800080; '>}</span>
+  sumSq <span style='color:#808030; '>=</span> numArr<span style='color:#808030; '>.</span>reduce<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>a<span style='color:#808030; '>,</span>b<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span> <span style='color:#800000; font-weight:bold; '>return</span> a<span style='color:#808030; '>+</span>b<span style='color:#800080; '>;</span> <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+  sumSq <span style='color:#808030; '>=</span> sumSq<span style='color:#808030; '>*</span>sumSq<span style='color:#800080; '>;</span>
+  sqSum <span style='color:#808030; '>=</span> numArr<span style='color:#808030; '>.</span>map<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>a<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span> <span style='color:#800000; font-weight:bold; '>return</span> a <span style='color:#808030; '>=</span> a<span style='color:#808030; '>*</span>a <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span>
+  sqSum <span style='color:#808030; '>=</span> sqSum<span style='color:#808030; '>.</span>reduce<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>a<span style='color:#808030; '>,</span>b<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span> <span style='color:#800000; font-weight:bold; '>return</span> a<span style='color:#808030; '>+</span>b<span style='color:#800080; '>;</span> <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+  <span style='color:#800000; font-weight:bold; '>return</span> sumSq <span style='color:#808030; '>-</span> sqSum<span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+</pre>
+							</td>
+							<td class="solution6">working...</td>
+							<td>24/4/2018</td>
+						</tr>
+
+            <tr>
+							<td>Problem 7: Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.</td>
+							<td><pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>function</span> problem7<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+  c<span style='color:#808030; '>=</span><span style='color:#008c00; '>1</span><span style='color:#800080; '>;</span>
+  x<span style='color:#808030; '>=</span><span style='color:#008c00; '>3</span><span style='color:#800080; '>;</span>
+  <span style='color:#800000; font-weight:bold; '>while</span><span style='color:#808030; '>(</span> c <span style='color:#808030; '>&lt;</span> <span style='color:#008c00; '>10001</span> <span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>isPrime<span style='color:#808030; '>(</span>x<span style='color:#808030; '>)</span> <span style='color:#808030; '>===</span> <span style='color:#0f4d75; '>true</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+      c<span style='color:#808030; '>++</span><span style='color:#800080; '>;</span>
+    <span style='color:#800080; '>}</span>
+    x<span style='color:#808030; '>+=</span><span style='color:#008c00; '>2</span><span style='color:#800080; '>;</span>
+  <span style='color:#800080; '>}</span>
+  <span style='color:#800000; font-weight:bold; '>return</span> x<span style='color:#808030; '>-</span><span style='color:#008c00; '>2</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+</pre>
+							</td>
+							<td class="solution7">working...</td>
+							<td>24/4/2018</td>
+						</tr>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</body>
+</html>
