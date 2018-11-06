@@ -167,7 +167,7 @@
 						</tr>
 
             <tr>
-							<td>Problem 7: Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.</td>
+							<td>Problem 7: What is the 10 001st prime number?</td>
 							<td><pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>function</span> problem7<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
   c<span style='color:#808030; '>=</span><span style='color:#008c00; '>1</span><span style='color:#800080; '>;</span>
   x<span style='color:#808030; '>=</span><span style='color:#008c00; '>3</span><span style='color:#800080; '>;</span>
@@ -183,7 +183,119 @@
 							</td>
 							<td class="solution7">working...</td>
 							<td>24/4/2018</td>
-						</tr>
+            </tr>
+            
+            <tr>
+							<td>Problem 8: Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?</td>
+							<td><pre style='color:#000000;background:#ffffff;'>function problem8<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+                let numSeq <span style='color:#808030; '>=</span> <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>omitted<span style='color:#808030; '>-</span><span style='color:#808030; '>-</span><span style='color:#800080; '>;</span>
+                let seqArr <span style='color:#808030; '>=</span> <span style='color:#808030; '>[</span><span style='color:#808030; '>]</span><span style='color:#800080; '>;</span>
+                let largestPr <span style='color:#808030; '>=</span> <span style='color:#008c00; '>0</span>
+                <span style='color:#800000; font-weight:bold; '>for</span><span style='color:#808030; '>(</span>let x <span style='color:#808030; '>=</span> <span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span> x<span style='color:#808030; '>&lt;</span>numSeq<span style='color:#808030; '>.</span>length<span style='color:#808030; '>-</span><span style='color:#008c00; '>12</span><span style='color:#800080; '>;</span> x<span style='color:#808030; '>+</span><span style='color:#808030; '>+</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+                  seqArr<span style='color:#808030; '>.</span>push<span style='color:#808030; '>(</span>numSeq<span style='color:#808030; '>.</span>slice<span style='color:#808030; '>(</span>x<span style='color:#808030; '>,</span> x<span style='color:#808030; '>+</span><span style='color:#008c00; '>13</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+                <span style='color:#800080; '>}</span>
+                <span style='color:#800000; font-weight:bold; '>for</span><span style='color:#808030; '>(</span>let x <span style='color:#808030; '>=</span> <span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span> x<span style='color:#808030; '>&lt;</span>seqArr<span style='color:#808030; '>.</span>length<span style='color:#800080; '>;</span> x<span style='color:#808030; '>+</span><span style='color:#808030; '>+</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+                  let tempArr <span style='color:#808030; '>=</span> seqArr<span style='color:#808030; '>[</span>x<span style='color:#808030; '>]</span><span style='color:#808030; '>.</span>split<span style='color:#808030; '>(</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>''</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>map<span style='color:#808030; '>(</span><span style='color:#808030; '>(</span>a<span style='color:#808030; '>)</span> <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> parseInt<span style='color:#808030; '>(</span>a<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+                  <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>tempArr<span style='color:#808030; '>.</span>includes<span style='color:#808030; '>(</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span> <span style='color:#800000; font-weight:bold; '>continue</span><span style='color:#800080; '>;</span> <span style='color:#800080; '>}</span>
+                  let tempSum <span style='color:#808030; '>=</span> tempArr<span style='color:#808030; '>.</span>reduce<span style='color:#808030; '>(</span><span style='color:#808030; '>(</span>acc<span style='color:#808030; '>,</span> curr<span style='color:#808030; '>)</span> <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> acc<span style='color:#808030; '>*</span>curr<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+                  <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>tempSum<span style='color:#808030; '>></span>largestPr<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+                    largestPr <span style='color:#808030; '>=</span> tempSum<span style='color:#800080; '>;</span>
+                  <span style='color:#800080; '>}</span>
+                <span style='color:#800080; '>}</span>
+                <span style='color:#800000; font-weight:bold; '>return</span> largestPr
+              <span style='color:#800080; '>}</span>
+              </pre>
+							</td>
+							<td class="solution8">working...</td>
+							<td>29/8/2018</td>
+            </tr>
+            
+            <tr>
+							<td>Problem 9:There exists exactly one Pythagorean triplet for which a + b + c = 1000. Find the product abc.</td>
+							<td><pre style='color:#000000;background:#ffffff;'>function problem9<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+                <span style='color:#800000; font-weight:bold; '>for</span><span style='color:#808030; '>(</span>let a<span style='color:#808030; '>=</span><span style='color:#008c00; '>1</span><span style='color:#800080; '>;</span> a<span style='color:#808030; '>&lt;</span><span style='color:#008c00; '>1000</span><span style='color:#800080; '>;</span> a<span style='color:#808030; '>+</span><span style='color:#808030; '>+</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+                  <span style='color:#800000; font-weight:bold; '>for</span><span style='color:#808030; '>(</span>let b<span style='color:#808030; '>=</span><span style='color:#008c00; '>2</span><span style='color:#800080; '>;</span> b<span style='color:#808030; '>&lt;</span><span style='color:#008c00; '>1000</span><span style='color:#800080; '>;</span> b<span style='color:#808030; '>+</span><span style='color:#808030; '>+</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+                    let c <span style='color:#808030; '>=</span> <span style='color:#008c00; '>1000</span><span style='color:#808030; '>-</span>a<span style='color:#808030; '>-</span>b<span style='color:#800080; '>;</span>
+                    <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>Math<span style='color:#808030; '>.</span>pow<span style='color:#808030; '>(</span>a<span style='color:#808030; '>,</span> <span style='color:#008c00; '>2</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>+</span> Math<span style='color:#808030; '>.</span>pow<span style='color:#808030; '>(</span>b<span style='color:#808030; '>,</span> <span style='color:#008c00; '>2</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>=</span><span style='color:#808030; '>=</span> Math<span style='color:#808030; '>.</span>pow<span style='color:#808030; '>(</span>c<span style='color:#808030; '>,</span> <span style='color:#008c00; '>2</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+                      <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>a<span style='color:#808030; '>+</span>b<span style='color:#808030; '>+</span>c<span style='color:#808030; '>=</span><span style='color:#808030; '>=</span><span style='color:#008c00; '>1000</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+                        <span style='color:#800000; font-weight:bold; '>return</span> a<span style='color:#808030; '>*</span>b<span style='color:#808030; '>*</span>c<span style='color:#800080; '>;</span>
+                      <span style='color:#800080; '>}</span>
+                    <span style='color:#800080; '>}</span>
+                  <span style='color:#800080; '>}</span>
+                <span style='color:#800080; '>}</span>
+              <span style='color:#800080; '>}</span>
+              </pre>
+							</td>
+							<td class="solution9">working...</td>
+							<td>29/8/2018</td>
+            </tr>
+            
+            <tr>
+							<td>Problem 10: </td>
+							<td>
+							</td>
+							<td class="solution10">working...</td>
+							<td>02/9/2018</td>
+            </tr>
+
+            <tr>
+							<td>Problem 11: </td>
+							<td>
+							</td>
+							<td class="solution11">working...</td>
+							<td>04/9/2018</td>
+            </tr>
+            
+            <tr>
+							<td>Problem 12: </td>
+							<td>
+							</td>
+							<td class="solution12">working...</td>
+							<td>07/9/2018</td>
+            </tr>
+
+            <tr>
+							<td>Problem 13: </td>
+							<td>
+							</td>
+							<td class="solution13">working...</td>
+							<td>08/9/2018</td>
+            </tr>
+
+            <tr>
+							<td>Problem 9: </td>
+							<td>
+							</td>
+							<td class="solution10">working...</td>
+							<td>02/9/2018</td>
+            </tr>
+
+            <tr>
+							<td>Problem 9: </td>
+							<td>
+							</td>
+							<td class="solution10">working...</td>
+							<td>02/9/2018</td>
+            </tr>
+
+            <tr>
+							<td>Problem 9: </td>
+							<td>
+							</td>
+							<td class="solution10">working...</td>
+							<td>02/9/2018</td>
+            </tr>
+
+            <tr>
+							<td>Problem 9: </td>
+							<td>
+							</td>
+							<td class="solution10">working...</td>
+							<td>02/9/2018</td>
+            </tr>
+
+            
+            
 
           </table>
 
