@@ -457,8 +457,25 @@ function problem13(){
 // Which starting number, under one million, produces the longest chain?
 
 function problem14(){
-
+  let starter = 0;
+  let longest = 0;
+  for(let y = 1000000; y>500000; y--){
+    let counter = 0;
+    let x = y;
+    while (x!=1) {
+      counter++;
+      if (x%2==0) { x = x/2;  }
+      else { x = 3*x + 1; }
+    }
+    if(counter>longest){ starter = y; longest = counter; }
+  }
+  return starter;
 }
+
+// Starting in the top left corner of a 2×2 grid, and only being able to move to the right and down, 
+// there are exactly 6 routes to the bottom right corner.
+
+// How many such routes are there through a 20×20 grid?
 
 $(document).ready(function(){
   console.time('prob1');
@@ -512,4 +529,8 @@ $(document).ready(function(){
   console.time('prob13');
   $("td.solution13").text(problem13());
   console.timeEnd('prob13');
+
+  console.time('prob14');
+  $("td.solution14").text(problem14());
+  console.timeEnd('prob14');
 });
